@@ -1,21 +1,13 @@
 import streamlit as st
 import time
-def loading_animation(duration=3):
-    # Create a placeholder container for the video.
-    placeholder = st.empty()
-    # Display the video file as a loading animation.
-    placeholder.video("vecteezy_cybersecurity-animation-footage-depicted-with-shield-and-cctv_48713365.mp4")
-    # Pause for a duration to simulate loading.
-    time.sleep(duration)
-    # Clear the video placeholder.
-    placeholder.empty()
 def button_with_loading(label, key=None, **kwargs):
     """
-    Custom button that shows a loading animation when clicked.
+    Custom button that shows a cybersecurity animation video when clicked.
     Returns True if the button was clicked.
     """
     if st.button(label, key=key, **kwargs):
-        loading_animation(duration=3)  # Adjust duration as needed.
+        video_url = "https://github.com/DhruvMenon2003/My-App/blob/master/vecteezy_cybersecurity-animation-footage-depicted-with-shield-and-cctv_48713365.mp4"
+        st.video(video_url)
         return True
     return False
 def main():
@@ -72,7 +64,6 @@ def main():
 
 if __name__ == "__main__":
     # Integrate with existing Logic
-  # Display the loading animation before the main app content.
     main()
 
 
