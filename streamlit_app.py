@@ -33,7 +33,7 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
-    st.title("Identity Verification Portal")
+    st.title('🎈  Kaboose User Verification')
     
     # Centered layout
     col1, col2, col3 = st.columns([1,2,1])
@@ -43,7 +43,7 @@ def main():
         st.markdown("""
             <div style="text-align: center;">
                 <h3 style="color: #2c3e50;">Let's make sure it's you</h3>
-                <p style="color: #7f8c8d;">Click the shield to begin verification</p>
+                <p style="color: #7f8c8d;">Real-Time Video verification in just 1-2 seconds!</p>
             </div>
         """, unsafe_allow_html=True)
 
@@ -56,8 +56,6 @@ if __name__ == "__main__":
     main()
     # Add your existing code below
 
-st.title('🎈  Kaboose User Verification')
 
-st.write('Real-Time Video verification in just 1-2 seconds!')
 
-st.button('Verify')
+
