@@ -1,6 +1,6 @@
-# 📦 Streamlit App Starter Kit 
+# 📦 Kaboose User Verification
 ```
-⬆️ (Replace above with your app's name)
+
 ```
 
 Description of the app ...
@@ -13,13 +13,6 @@ Description of the app ...
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/app-starter-kit?quickstart=1)
 
-## Section Heading
 
-This is filler text, please replace this with text for this section.
+Created using https://streamlit.io/
 
-## Further Reading
-
-This is filler text, please replace this with a explanatory text about further relevant resources for this repo
-- Resource 1
-- Resource 2
-- Resource 3
