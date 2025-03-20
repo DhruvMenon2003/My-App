@@ -73,7 +73,6 @@ def main():
 if __name__ == "__main__":
     # Integrate with existing Logic
   # Display the loading animation before the main app content.
-    loading_animation(duration=3)
     main()
 
 
