@@ -6,7 +6,7 @@ def button_with_loading(label, key=None, **kwargs):
     Returns True if the button was clicked.
     """
     if st.button(label, key=key, **kwargs):
-        video_url = "https://github.com/DhruvMenon2003/My-App/blob/master/vecteezy_cybersecurity-animation-footage-depicted-with-shield-and-cctv_48713365.mp4"
+        video_url = "vecteezy_cybersecurity-animation-footage-depicted-with-shield-and-cctv_48713365.mp4"
         st.video(video_url)
         return True
     return False
