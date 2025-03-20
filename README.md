@@ -3,7 +3,7 @@
 
 ```
 
-Description of the app ...
+Real-Time Video verification in just 1-2 seconds!
 
 ## Demo App
 
@@ -14,5 +14,4 @@ Description of the app ...
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/app-starter-kit?quickstart=1)
 
 
-Created using https://streamlit.io/
 
