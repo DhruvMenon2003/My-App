@@ -4,7 +4,7 @@ def loading_animation(duration=3):
     # Create a placeholder container for the video.
     placeholder = st.empty()
     # Display the video file as a loading animation.
-    placeholder.video("D:\vecteezy_cybersecurity-animation-footage-depicted-with-shield-and-cctv_48713365.mov")
+    placeholder.video("vecteezy_cybersecurity-animation-footage-depicted-with-shield-and-cctv_48713365.mov")
     # Pause for a duration to simulate loading.
     time.sleep(duration)
     # Clear the video placeholder.
