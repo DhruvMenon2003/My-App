@@ -1,2 +1,4 @@
-face-recognition
-
+streamlit
+opencv-python
+dlib
+numpy
