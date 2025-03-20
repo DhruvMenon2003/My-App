@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('🎈 App Name')
+st.title('🎈  Kaboose User Verification')
 
-st.write('Hello wor!')
+st.write('Real-Time Video verification in just 1-2 seconds!')
