@@ -1,15 +1,17 @@
 import streamlit as st
-import time
+
 def button_with_loading(label, key=None, **kwargs):
     """
     Custom button that shows a cybersecurity animation video when clicked.
     Returns True if the button was clicked.
     """
     if st.button(label, key=key, **kwargs):
-        video_url = "vecteezy_cybersecurity-animation-footage-depicted-with-shield-and-cctv_48713365.mp4"
+        # Correct raw GitHub URL format
+        video_url = "https://raw.githubusercontent.com/DhruvMenon2003/My-App/master/vecteezy_cybersecurity-animation-footage-depicted-with-shield-and-cctv_48713365.mp4"
         st.video(video_url)
         return True
     return False
+
 def main():
     # Custom CSS for animations
     st.markdown("""
@@ -43,7 +45,7 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
-    st.title('🎈  Kaboose User Verification')
+    st.title('🎈 Kaboose User Verification')
     
     # Centered layout
     col1, col2, col3 = st.columns([1,2,1])
@@ -57,14 +59,12 @@ def main():
             </div>
         """, unsafe_allow_html=True)
 
-        if st.button("🛡️ START VERIFICATION", key="verify_btn", help="Click to begin identity verification"):
+        # Using the custom button component
+        if button_with_loading("🛡️ START VERIFICATION", key="verify_btn", 
+                            help="Click to begin identity verification"):
             st.session_state.verify_clicked = True
 
         st.markdown("<br><br>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
-    # Integrate with existing Logic
     main()
-
-
-
