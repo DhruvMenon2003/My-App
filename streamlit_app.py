@@ -1,8 +1,8 @@
-import streamlit as st
 import tempfile
 import os
-from deepface import DeepFace
+import face_recognition
 import cv2
+import streamlit as st
 
 # Combined CSS styles
 st.markdown("""
@@ -109,21 +109,31 @@ def verification_page():
             </div>
             """, unsafe_allow_html=True)
             
-            with tempfile.TemporaryDirectory() as temp_db:
-                os.link(st.session_state.reference_img, f"{temp_db}/reference.jpg")
-                try:
-                    result = DeepFace.stream(
-                        db_path=temp_db,
-                        model_name="Facenet512",
-                        detector_backend="retinaface",
-                        enable_face_analysis=False,
-                        time_threshold=2,
-                        frame_threshold=5
-                    )
-                    st.session_state.verified = bool(result)
-                except Exception as e:
-                    st.error(f"Verification error: {str(e)}")
-                    st.session_state.verified = False
+            reference_image = face_recognition.load_image_file(st.session_state.reference_img)
+            reference_encoding = face_recognition.face_encodings(reference_image)[0]
+            
+            video_capture = cv2.VideoCapture(0)
+            verified = False
+
+            for _ in range(50):  # Check for 50 frames
+                ret, frame = video_capture.read()
+                if not ret:
+                    continue
+
+                frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                face_encodings = face_recognition.face_encodings(frame_rgb)
+
+                for face_encoding in face_encodings:
+                    match = face_recognition.compare_faces([reference_encoding], face_encoding)
+                    if match[0]:
+                        verified = True
+                        break
+
+                if verified:
+                    break
+            
+            video_capture.release()
+            st.session_state.verified = verified
 
             if st.session_state.reference_img and os.path.exists(st.session_state.reference_img):
                 os.remove(st.session_state.reference_img)
